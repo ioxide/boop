@@ -1,0 +1,31 @@
+#misc
+*.swp
+
+#IDE-specific things
+.idea
+
+#packaged libs
+bin
+
+#coverage artifacts
+lib-cov
+coverage
+
+#logs
+logs
+*.log
+
+#runtime data
+pids
+*.pid
+*.seed
+
+#node stuff
+node_modules
+build/Release
+.lock-wscript
+
+#typescript stuff
+typings/
+
+*.iml
