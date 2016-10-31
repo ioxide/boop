@@ -1,11 +1,32 @@
 {
   "name": "boop",
-  "version": "0.0.1",
-  "description": "we boopin now",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "boop",
+  "main": "bin/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rm -rf bin/ || rm -rf typings/",
+    "build": "npm run clean && typings install && npm run build-server && npm run build-client",
+    "build-server": "tsc && cp -r static/* bin/",
+    "build-client": "browserify --debug src/client.ts -p [ tsify --noImplicitAny ] -o bin/client_packaged.js"
   },
-  "author": "bpl",
-  "license": "ISC"
+  "author": "ioxide",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ioxide/boop.git"
+  },
+  "dependencies": {
+    "browserify": "^13.0.1",
+    "es6-shim": "^0.35.1",
+    "express": "^4.14.0",
+    "jquery": "^3.0.0",
+    "json-loader": "^0.5.4",
+    "minimist": "^1.2.0",
+    "phaser": "^2.6.2",
+    "socket.io": "^1.4.8",
+    "socket.io-client": "^1.4.8",
+    "tsify": "^0.16.0",
+    "typings": "^1.4.0",
+    "watchify": "^3.7.0"
+  }
 }

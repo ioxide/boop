@@ -1,4 +1,4 @@
 ## Developing boop
 ### Development Environment Setup
-* Just trying something
+* boop the boops!
 
